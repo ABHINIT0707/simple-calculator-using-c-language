@@ -13,36 +13,38 @@ int main() {
 
     printf("Enter your choice (1-4): ");
     scanf("%d", &choice);
-
-    printf("Enter two numbers: ");
-    scanf("%f %f", &num1, &num2);
-
-    switch (choice) {
-        case 1:
-            result = num1 + num2;
-            printf("Result = %.2f", result);
-            break;
-
-        case 2:
-            result = num1 - num2;
-            printf("Result = %.2f", result);
-            break;
-
-        case 3:
-            result = num1 * num2;
-            printf("Result = %.2f", result);
-            break;
-
-        case 4:
-            if (num2 != 0)
-                printf("Result = %.2f", num1 / num2);
-            else
-                printf("Error! Division by zero is not allowed.");
-            break;
-
-        default:
-            printf("Invalid choice!");
+    if(choice<1 ||choice>4){
+        printf("invalid choice")
     }
+    else{
+        printf("Enter two numbers: ");
+        scanf("%f %f", &num1, &num2);
 
+        switch (choice) {
+            case 1:
+                result = num1 + num2;
+                printf("Result = %.2f", result);
+                break;
+
+            case 2:
+                result = num1 - num2;
+                printf("Result = %.2f", result);
+                break;
+
+            case 3:
+                result = num1 * num2;
+                printf("Result = %.2f", result);
+                break;
+
+            case 4:
+                if (num2 != 0)
+                    printf("Result = %.2f", num1 / num2);
+                else
+                    printf("Error! Division by zero is not allowed.");
+                break;
+
+       
+    }
+        }
     return 0;
 }
